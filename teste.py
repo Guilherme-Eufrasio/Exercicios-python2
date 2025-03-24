@@ -19,6 +19,6 @@ for k,v in alunos.items():
     for s in soma:        
         media.append(s/4)
     medias.append(media)
-    print(medias)
+    
     
 

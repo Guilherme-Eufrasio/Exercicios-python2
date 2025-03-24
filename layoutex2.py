@@ -21,6 +21,7 @@ pagina.write('''
     <table border ="1">
     
 ''')
+#print(f"BOLETIM {boletim_lido}")
 for aluno, desempenho in (boletim_lido.items()):
     pagina.write (f"""
         <th>{aluno}</th>
@@ -33,17 +34,20 @@ for aluno, desempenho in (boletim_lido.items()):
             <th>Média</th>
         </tr>
     """),
+
     #pagina.write(f"""{desempenho}""")
     
     for pos, notas in enumerate(desempenho):
-        print(pos, notas)
-        materia = materias[pos]
-        pagina.write(f"""
-                <tr>
-                    <td>{materia}</td>
-        """)        
-        for nota in notas:
-            pagina.write(f"""<td>{nota}</td>""")
-        pagina.write(f"""
-                </tr>
-        """)    
+        if pos == 5:
+             break
+        else:
+            materia = materias[pos]
+            pagina.write(f"""
+                    <tr>
+                        <td>{materia}</td>
+            """)        
+            for nota in notas:
+                pagina.write(f"""<td>{nota}</td>""")
+            pagina.write(f"""
+                    </tr>
+            """)    
